@@ -26,7 +26,7 @@ const InstagramFeed: React.FC<{ posts: InstagramPost[] }> = ({ posts }) => {
 	return (
 		<div>
 			<div className="lg:container mx-auto px-4">
-				<h1 className="text-h3 sm:text-h2 w-full text-center mb-[20px]">
+				<h1 className="text-[28px] sm:text-h3 md:text-h2 w-full text-center mb-[16px] sm:mb-[20px]">
 					Instagram Feed
 				</h1>
 				{windowWidth > 650 ? (

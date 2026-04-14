@@ -169,8 +169,8 @@
   right: -15px;
 }
 @media (max-width: 770px) {
-  .slick-prev { display: hidden; }
-  .slick-next { display: hidden; }
+  .slick-prev { display: none !important; }
+  .slick-next { display: none !important; }
 }
 @media (max-width: 720px) {
   .slick-prev { left: -15px; }

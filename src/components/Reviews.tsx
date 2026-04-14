@@ -15,12 +15,10 @@ const Reviews = () => {
     };
 
     return (
-        <div className="relative"
+        <div className="relative rounded-[24px] sm:rounded-[36px]"
             style={{
                 overflow: "hidden",
-                minHeight: '644px',
                 alignSelf: "stretch",
-                borderRadius: "36px",
                 background: "var(--primary-dark)",
             }}
         >
@@ -47,7 +45,7 @@ const Reviews = () => {
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                     <ReviewCard
                         starCount={5}
                         reviewText="Best pizza in Bergen County, hands down. The sourdough crust is incredible -- crispy on the outside, chewy on the inside. The Hot Honey Heaven pizza is absolutely addicting. Will keep coming back!"

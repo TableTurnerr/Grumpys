@@ -79,7 +79,7 @@ export function AnimatedMenuButton({ menuItems }: AnimatedMenuButtonProps) {
       </button>
 
       <motion.div
-        className="w-fit top-18 left-5 mt-2 absolute bg-[#fff] rounded-lg shadow-lg overflow-hidden z-100 border border-gray-200"
+        className="w-fit top-14 sm:top-18 left-2 sm:left-5 mt-2 absolute bg-[#fff] rounded-lg shadow-lg overflow-hidden z-100 border border-gray-200"
         variants={menuVariants}
         initial="closed"
         animate={isOpen ? "open" : "closed"}

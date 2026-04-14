@@ -34,24 +34,28 @@ function Header({ onClick }: { onClick: () => void }) {
     }
   };
 
+  const menuItems = [
+    { name: "Menu", onclick: () => { window.open('https://grumpysnj.com/menu', '_blank'); } },
+    { name: "Reviews", onclick: () => { scrollToSection('Reviews') } },
+    { name: "Featuring", onclick: () => { scrollToSection('Featuring') } },
+    { name: "FAQ's", onclick: () => { scrollToSection("FAQ's") } },
+    { name: "Location", onclick: () => { scrollToSection('Location') } }
+  ];
+
   return (
-    <div className="p-[20px] w-full">
-      <div className={`w-full grid grid-cols-2 md:grid-cols-3 items-center`}>
-        {/* Left Section */}
+    <div className="px-[10px] py-[12px] sm:p-[20px] w-full">
+      <div className={`w-full grid grid-cols-3 items-center`}>
+        {/* Left Section - Desktop */}
         <div className="hidden md:flex justify-start">
-          <AnimatedMenuButton
-            menuItems={[
-              { name: "Menu", onclick: () => { window.open('https://grumpysnj.com/menu', '_blank'); } },
-              { name: "Reviews", onclick: () => { scrollToSection('Reviews') } },
-              { name: "Featuring", onclick: () => { scrollToSection('Featuring') } },
-              { name: "FAQ's", onclick: () => { scrollToSection("FAQ's") } },
-              { name: "Location", onclick: () => { scrollToSection('Location') } }
-            ]}
-          />
+          <AnimatedMenuButton menuItems={menuItems} />
+        </div>
+        {/* Left Section - Mobile */}
+        <div className="flex md:hidden justify-start">
+          <AnimatedMenuButton menuItems={menuItems} />
         </div>
 
         {/* Center Section */}
-        <div className={`flex justify-start md:justify-center`}>
+        <div className={`flex justify-center`}>
           <div
             className="relative cursor-pointer"
             onClick={() => { router.push('/'); }}
@@ -61,7 +65,7 @@ function Header({ onClick }: { onClick: () => void }) {
               alt="Grumpy's Sourdough Pizza Co. Logo"
               width={80}
               height={80}
-              className="object-cover rounded-[10px]"
+              className="object-cover rounded-[10px] w-[56px] h-[56px] sm:w-[80px] sm:h-[80px]"
               priority
             />
           </div>

@@ -62,7 +62,7 @@ const FeaturedDishSection: React.FC<FeaturedDishSectionProps> = ({
   };
 
   return (
-    <div className={`mt-16 md:mt-[100px] px-4 lg:px-[80px] ${containerClass}`}>
+    <div className={`mt-10 sm:mt-16 md:mt-[100px] px-2 sm:px-4 lg:px-[80px] ${containerClass}`}>
       <div className={`mx-auto w-full max-w-[1240px] flex flex-col lg:flex-row lg:justify-between items-center gap-8 lg:gap-0${reverse ? ' lg:flex-row-reverse' : ''}`}>
         <div className={`relative aspect-square max-w-[540px] max-h-[540px] block w-[90%] h-auto lg:w-[400px] lg:h-[400px] xl:w-[540px] xl:h-[540px] shrink-0 rounded-[24px] overflow-hidden ${imageClass}`}>
           {images.map((src, index) => (
@@ -89,10 +89,10 @@ const FeaturedDishSection: React.FC<FeaturedDishSectionProps> = ({
           ))}
         </div>
         <div className={`flex w-full lg:w-fit max-w-[560px] flex-col items-center lg:items-start gap-0 md:gap-[20px] mt-0 lg:mt-0 mb-6 lg:mb-0 lg:pl-8 ${textClass}`}>
-          <div className="self-stretch text-h3 xl:text-h2 text-center lg:text-left mb-0 -mt-2">
+          <div className="self-stretch text-[24px] sm:text-h3 xl:text-h2 text-center lg:text-left mb-0 -mt-2">
             {title}
           </div>
-          <div className="text-normal4 md:text-normal3 text-[var(--tt-color-text-gray)] text-center lg:text-left">
+          <div className="text-[13px] sm:text-normal4 md:text-normal3 text-[var(--tt-color-text-gray)] text-center lg:text-left">
             {description}
           </div>
         </div>

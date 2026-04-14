@@ -2,11 +2,11 @@ import React from "react";
 import Image from "next/image";
 
 const Footer = ({ scrollToSection }: { scrollToSection?: (sectionId: string) => void }) => (
-    <footer className="w-full px-[10px] md:px-[50px] lg:px-[70px] pb-[20px] sm:pb-[10px]" style={{ background: 'var(--tt-bg-color)' }}>
-        <div className="text-h3 sm:text-h2 w-full">
+    <footer className="w-full px-[16px] md:px-[50px] lg:px-[70px] pb-[20px] sm:pb-[10px]" style={{ background: 'var(--tt-bg-color)' }}>
+        <div className="text-[28px] sm:text-h3 md:text-h2 w-full text-center sm:text-left">
             Grumpy&apos;s Sourdough Pizza Co.
         </div>
-        <div className="mb-[32px] mx-2 text-normal2" style={{ color: 'var(--tt-color-text-gray)' }}>
+        <div className="mb-[24px] sm:mb-[32px] mx-2 text-[14px] sm:text-normal2" style={{ color: 'var(--tt-color-text-gray)' }}>
             Not your traditional pizza spot. At Grumpy&apos;s in Saddle Brook, NJ, we craft every pie with our signature sourdough crust -- fermented for that perfect tang, crispiness, and chewy interior that earned us the #1 Pizza in Bergen County title with 4.8 stars on Google. Choose from over 25 specialty sourdough pizzas, Italian-American subs &amp; wraps, burgers, signature sliders, wings, pasta, supreme salads, and irresistible desserts. Same-day catering available for Bergen County offices and events. BYOB welcome. Serving Saddle Brook, Lodi, Garfield, Elmwood Park, Rochelle Park, Fair Lawn, Paramus &amp; all of Bergen County. Come hungry, leave happy.
         </div>
         <div className="container mx-auto">
@@ -18,9 +18,9 @@ const Footer = ({ scrollToSection }: { scrollToSection?: (sectionId: string) => 
                         alt="Grumpy's Sourdough Pizza Co. Logo"
                         width={100}
                         height={100}
-                        className="object-contain w-auto h-[200px] md:h-[230px] aspect-square rounded-[12px]"
+                        className="object-contain w-auto h-[140px] sm:h-[200px] md:h-[230px] aspect-square rounded-[12px]"
                     />
-                    <div className="flex h-[120px] justify-evenly gap-[10px] flex-col my-auto max-w-100">
+                    <div className="flex h-[100px] sm:h-[120px] justify-evenly gap-[10px] flex-col my-auto max-w-100">
                         <a
                             href="https://www.instagram.com/grumpysnj"
                             aria-label="Instagram"

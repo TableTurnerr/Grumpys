@@ -12,7 +12,7 @@ export const AnimatedCTAButton: React.FC<AnimatedCTAButtonProps> = ({ buttonLeft
   const [hoveredButton, setHoveredButton] = useState<'left' | 'right' | null>(null);
 
   return (
-    <div className="flex justify-center items-center w-[221px] h-[41px] cursor-pointer">
+    <div className="flex justify-center items-center w-[150px] sm:w-[221px] h-[36px] sm:h-[41px] cursor-pointer">
       <div className="relative w-full max-w-lg h-full">
         {/* Left Button */}
         <motion.button
@@ -34,7 +34,7 @@ export const AnimatedCTAButton: React.FC<AnimatedCTAButtonProps> = ({ buttonLeft
           onClick={buttonLeft}
         >
           <div className="flex items-center justify-between w-full">
-            <motion.div className='overflow-hidden text-nowrap text-normal2 font-semibold mx-auto text-primary-dark'
+            <motion.div className='overflow-hidden text-nowrap text-[13px] sm:text-normal2 font-semibold mx-auto text-primary-dark'
               animate={{
                 width: hoveredButton === 'right' ? "0%" : "100%",
                 borderTopLeftRadius: hoveredButton === 'left' ? "8px" : "0px",
@@ -67,7 +67,7 @@ export const AnimatedCTAButton: React.FC<AnimatedCTAButtonProps> = ({ buttonLeft
           onMouseLeave={() => setHoveredButton(null)}
         >
           <div className="flex items-center justify-between w-full">
-            <motion.div className='overflow-hidden text-nowrap text-normal2 font-bold text-white flex-1 mx-auto ml-1'
+            <motion.div className='overflow-hidden text-nowrap text-[13px] sm:text-normal2 font-bold text-white flex-1 mx-auto ml-1'
               animate={{
                 width: hoveredButton === 'left' ? "0%" : "50%",
                 borderTopLeftRadius: hoveredButton === 'right' ? "8px" : "0px",
@@ -81,7 +81,7 @@ export const AnimatedCTAButton: React.FC<AnimatedCTAButtonProps> = ({ buttonLeft
               Order
             </motion.div>
             <div className='flex justify-end m-[5px]'>
-              <div className="w-[31px] h-[31px] bg-black/25 rounded-[7px] flex items-center justify-center"
+              <div className="w-[26px] h-[26px] sm:w-[31px] sm:h-[31px] bg-black/25 rounded-[7px] flex items-center justify-center"
                 style={{ marginLeft: hoveredButton === 'left' ? -35 : 0 }}>
                 <svg className="w-6 h-6 text-white -rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />

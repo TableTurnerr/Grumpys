@@ -30,8 +30,8 @@ const LocationComponent = () => {
   const mapUrl = `https://maps.google.com/maps?q=${encodeURIComponent(locationData.mapQuery)}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
 
   return (
-    <div className="sm:mx-[70px] mx-0">
-      <h2 className="text-h2 mb-[32px] sm:text-left text-center">Our Location</h2>
+    <div className="sm:mx-[70px] mx-[10px]">
+      <h2 className="text-h3 sm:text-h2 mb-[20px] sm:mb-[32px] text-center sm:text-left">Our Location</h2>
       <div className="relative">
         <div className="w-full h-[400px] rounded-[14px] overflow-hidden bg-white border border-gray-300 location-map-container">
           <iframe
@@ -43,16 +43,6 @@ const LocationComponent = () => {
             style={{ background: '#fff', filter: 'none', border: 'none' }}
           ></iframe>
         </div>
-        <style>{`
-          @media (max-width: 770px) {
-            .location-map-container {
-              max-width: 95vw !important;
-              width: 95vw !important;
-              height: 340px !important;
-            }
-          }
-        `}</style>
-
         {/* Overlay Container (desktop only) */}
         <div className="hidden absolute inset-0 z-20 p-[16px] md:flex flex-wrap justify-between pointer-events-none">
           <div className='flex flex-col gap-2'>
@@ -101,6 +91,44 @@ const LocationComponent = () => {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Mobile info cards (below map) */}
+      <div className="flex md:hidden flex-col gap-3 mt-4">
+        <div className="flex flex-row gap-3">
+          <div className="flex-1 flex flex-col px-4 py-3 rounded-2xl bg-gray-50 border border-gray-200">
+            <div className='text-[12px] text-black/50 mb-1'>Address</div>
+            <div className='text-[13px] text-black leading-[20px]'>
+              {locationData.mapQuery}
+            </div>
+          </div>
+          <div className="flex flex-col px-4 py-3 rounded-2xl bg-gray-50 border border-gray-200">
+            <div className='text-[12px] text-black/50 mb-1'>Contact</div>
+            <a href={`tel:${locationData.contact?.phone}`} className='text-[13px] text-primary-dark font-medium'>
+              {locationData.contact?.phone}
+            </a>
+          </div>
+        </div>
+        <button
+          className='h-[40px] w-full flex items-center justify-center bg-primary-dark rounded-full text-white text-normal4 font-medium cursor-pointer'
+          onClick={() => {
+            window.open(`https://www.google.com/maps?q=${encodeURIComponent(locationData.mapQuery)}`, '_blank');
+          }}
+        >
+          Get Directions
+        </button>
+        <div className="px-4 py-3 rounded-2xl bg-gray-50 border border-gray-200">
+          <h4 className="text-[12px] text-black/50 mb-2">Hours</h4>
+          <div className="grid grid-cols-2 gap-y-1">
+            {locationData.openingHours.map((item, index) => (
+              <React.Fragment key={index}>
+                <p className="text-[13px] text-black/70">{item.day}</p>
+                <p className="text-[13px] text-black/70 text-right">{item.hours}</p>
+              </React.Fragment>
+            ))}
+          </div>
+          <p className="text-[12px] text-primary-dark font-medium mt-2">{locationData.extraInfo}</p>
         </div>
       </div>
     </div>

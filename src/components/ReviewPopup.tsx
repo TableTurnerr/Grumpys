@@ -73,7 +73,7 @@ const ReviewPopup: React.FC<ReviewPopupProps> = ({ onClose, onSubmit }) => {
   };
 
   return (
-    <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
+    <div className="fixed inset-0 bg-black/40 flex items-end sm:items-center justify-center z-50 p-0 sm:p-4">
       <style>{`
         .svg-container { display: flex; justify-content: center; align-items: center; height: 120px; }
         .ft-green-tick { display: block; margin: 0 auto; }
@@ -103,7 +103,7 @@ const ReviewPopup: React.FC<ReviewPopupProps> = ({ onClose, onSubmit }) => {
           100% { stroke-dashoffset: 0; }
         }
       `}</style>
-      <div className="bg-white rounded-xl py-8 px-6 w-full max-w-md shadow-lg relative flex flex-col justify-center">
+      <div className="bg-white rounded-t-xl sm:rounded-xl py-8 px-6 w-full max-w-md shadow-lg relative flex flex-col justify-center max-h-[85svh] overflow-y-auto">
         <button className="absolute top-4 right-4 text-gray-500 hover:text-black" style={{ top: '1rem', right: '1rem' }} onClick={onClose}>&times;</button>
         {showGooglePrompt ? (
           <div className="flex flex-col items-center justify-center min-h-[200px]">

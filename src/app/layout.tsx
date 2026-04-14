@@ -47,6 +47,10 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website"
   },
+  icons: {
+    icon: "/Images/Logo.jpg",
+    apple: "/Images/Logo.jpg",
+  },
   twitter: {
     card: "summary_large_image",
     site: "https://grumpysnj.com/",

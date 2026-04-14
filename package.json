@@ -1,0 +1,36 @@
+{
+  "name": "grumpys-website",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "postbuild": "node ./scripts/fix-out.js",
+    "start": "next start",
+    "lint": "eslint .",
+    "export": "npm run build",
+    "fix-out": "node ./scripts/fix-out.js",
+    "serve-out": "npx serve out"
+  },
+  "dependencies": {
+    "framer-motion": "^12.6.5",
+    "next": "^15.5.7",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-slick": "^0.30.3",
+    "slick-carousel": "^1.8.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/react-slick": "^0.23.13",
+    "eslint": "9.39.2",
+    "eslint-config-next": "16.0.10",
+    "sass": "^1.87.0",
+    "sharp": "^0.34.5",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}

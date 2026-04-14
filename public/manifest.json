@@ -1,0 +1,16 @@
+{
+  "name": "Grumpy's Sourdough Pizza Co.",
+  "short_name": "Grumpy's Pizza",
+  "description": "Voted #1 Pizza in Bergen County. Signature sourdough crust, Italian-American subs, burgers & more.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#C41E24",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ]
+}

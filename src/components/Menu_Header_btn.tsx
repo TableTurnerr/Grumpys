@@ -1,0 +1,100 @@
+"use client";
+
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+
+interface MenuItem {
+  name: string;
+  onclick: () => void;
+}
+
+interface AnimatedMenuButtonProps {
+  menuItems: MenuItem[];
+}
+
+export function AnimatedMenuButton({ menuItems }: AnimatedMenuButtonProps) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const topLineVariants = {
+    closed: { rotate: 0, translateY: 0 },
+    open: { rotate: 45, translateY: 2 }
+  };
+
+  const bottomLineVariants = {
+    closed: { rotate: 0, translateY: 0 },
+    open: { rotate: -45, translateY: -3.5 }
+  };
+
+  const menuVariants = {
+    closed: {
+      opacity: 0,
+      height: 0,
+      transition: {
+        duration: 0.3,
+        when: "afterChildren",
+        staggerChildren: 0.05,
+        staggerDirection: -1
+      }
+    },
+    open: {
+      opacity: 1,
+      height: "auto",
+      transition: {
+        duration: 0.3,
+        when: "beforeChildren",
+        staggerChildren: 0.05,
+        staggerDirection: 1
+      }
+    }
+  };
+
+  const menuItemVariants = {
+    closed: { opacity: 0, y: -10 },
+    open: { opacity: 1, y: 0 }
+  };
+
+  return (
+    <div className="flex flex-col items-center">
+      <button
+        className="w-10 h-[14px] flex flex-col justify-evenly bg-transparent border-none cursor-pointer p-0 z-100"
+        onClick={toggleMenu}
+        aria-label={isOpen ? "Close menu" : "Open menu"}
+      >
+        <motion.div
+          className="w-[24px] h-[1.75px] rounded-full bg-[#1A1A1A]"
+          variants={topLineVariants}
+          animate={isOpen ? "open" : "closed"}
+          transition={{ duration: 0.3 }}
+        />
+        <motion.div
+          className="w-[24px] h-[1.75px] rounded-full bg-[#1A1A1A]"
+          variants={bottomLineVariants}
+          animate={isOpen ? "open" : "closed"}
+          transition={{ duration: 0.3 }}
+        />
+      </button>
+
+      <motion.div
+        className="w-fit top-18 left-5 mt-2 absolute bg-[#fff] rounded-lg shadow-lg overflow-hidden z-100 border border-gray-200"
+        variants={menuVariants}
+        initial="closed"
+        animate={isOpen ? "open" : "closed"}
+      >
+        {menuItems.map((item, index) => (
+          <motion.div
+            key={index}
+            className="py-2 px-8 text-normal4 text-black hover:bg-gray-100 cursor-pointer"
+            variants={menuItemVariants}
+            onClick={() => { item.onclick(); }}
+          >
+            {item.name}
+          </motion.div>
+        ))}
+      </motion.div>
+    </div>
+  );
+}
